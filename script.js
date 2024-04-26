@@ -1,4 +1,13 @@
-function asyncCall() {
+function resolveAfter1Second() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 1000);
+  });
+}
+
+
+async function asyncCall() {
   'use strict';
   const result = await resolveAfter1Second();
 
@@ -26,9 +35,6 @@ function asyncCall() {
 
 // Function to open content as an overlay
 function openOverlay(url) {
-  // Here you can implement your overlay logic,
-  // such as displaying a modal or a div overlay with the blog content loaded via AJAX
-  // For simplicity, I'll just log the URL for now
   console.log("Opening overlay for:", url);
 }
 
